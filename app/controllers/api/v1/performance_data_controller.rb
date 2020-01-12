@@ -1,5 +1,4 @@
 class Api::V1::PerformanceDataController < ApplicationController
-    class Api::V1::PerformanceDataController < ApplicationController
         before_action :authenticate_user!
       
         def create
@@ -16,12 +15,11 @@ class Api::V1::PerformanceDataController < ApplicationController
             collection = current_user.performance_data
             render json: { entries: collection }
         end
-        
+
       
         private
         
         def performance_data_params
             params.require(:performance_data).permit!
         end
-    end  
-end  
+      end
